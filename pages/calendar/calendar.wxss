@@ -1,0 +1,191 @@
+/* pages/calendar/calendar.wxss */
+.container {
+  padding: 20px;
+  padding-bottom: 40px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 20px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+}
+
+/* 日历头部 */
+.calendar-header {
+  margin-bottom: 20px;
+}
+
+.calendar-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.nav-btn {
+  font-size: 24px;
+  padding: 8px 16px;
+  color: var(--primary);
+}
+
+.current-month {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* 星期标题 */
+.weekdays {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  margin-bottom: 12px;
+}
+
+.weekday {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* 日期网格 */
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+}
+
+.day-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  position: relative;
+}
+
+.day-cell.other-month {
+  opacity: 0.3;
+}
+
+.day-cell.today {
+  background: var(--primary);
+}
+
+.day-cell.today .day-num {
+  color: white;
+}
+
+.day-cell.has-event {
+  background: rgba(37, 99, 235, 0.1);
+}
+
+.day-num {
+  font-size: 14px;
+}
+
+.event-dot {
+  width: 4px;
+  height: 4px;
+  background: var(--primary);
+  border-radius: 50%;
+  position: absolute;
+  bottom: 4px;
+}
+
+/* 事件区域 */
+.events-section {
+  margin-bottom: 20px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 0;
+}
+
+.empty-icon {
+  font-size: 40px;
+  margin-bottom: 8px;
+}
+
+.empty-text {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+/* 事件列表 */
+.event-item {
+  display: flex;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.event-item:last-child {
+  border-bottom: none;
+}
+
+.event-time {
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.time {
+  font-size: 13px;
+  color: var(--text-secondary);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 4px 8px;
+  border-radius: 6px;
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-title {
+  font-size: 15px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.event-location {
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+/* 本周概览 */
+.week-stats {
+  display: flex;
+  justify-content: space-around;
+  padding: 10px 0;
+}
+
+.stat-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.stat-num {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}

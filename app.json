@@ -1,0 +1,51 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/detail/detail",
+    "pages/calendar/calendar",
+    "pages/stats/stats",
+    "pages/profile/profile",
+    "pages/login/login"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F5F5F7",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "TaskFlow",
+    "backgroundColor": "#F5F5F7",
+    "backgroundTextStyle": "dark"
+  },
+  "tabBar": {
+    "color": "#94a3b8",
+    "selectedColor": "#2563EB",
+    "backgroundColor": "rgba(255,255,255,0.6)",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home-active.png"
+      },
+      {
+        "pagePath": "pages/calendar/calendar",
+        "text": "日历",
+        "iconPath": "images/calendar.png",
+        "selectedIconPath": "images/calendar-active.png"
+      },
+      {
+        "pagePath": "pages/stats/stats",
+        "text": "统计",
+        "iconPath": "images/stats.png",
+        "selectedIconPath": "images/stats-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "images/profile.png",
+        "selectedIconPath": "images/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json"
+}

@@ -1,0 +1,243 @@
+/* pages/stats/stats.wxss */
+.container {
+  padding: 20px;
+  padding-bottom: 40px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: bold;
+  display: block;
+}
+
+.subtitle {
+  font-size: 14px;
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 4px;
+}
+
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+}
+
+/* 核心数据卡片 */
+.stats-overview {
+  margin-bottom: 16px;
+}
+
+.stat-row {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.stat-item-large {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8px 0;
+}
+
+.stat-num-large {
+  font-size: 32px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.stat-label-large {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+.divider {
+  width: 1px;
+  height: 40px;
+  background: rgba(0, 0, 0, 0.1);
+}
+
+/* 图表容器 */
+.chart-container {
+  padding: 20px 0;
+}
+
+/* 柱状图 */
+.bar-chart {
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-end;
+  height: 180px;
+  padding: 0 10px;
+}
+
+.bar-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+.bar-wrapper {
+  width: 24px;
+  height: 120px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  background: rgba(37, 99, 235, 0.1);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.bar {
+  width: 100%;
+  background: linear-gradient(180deg, var(--primary) 0%, rgba(37, 99, 235, 0.6) 100%);
+  border-radius: 12px;
+  transition: height 0.5s ease;
+}
+
+.bar-day {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+}
+
+.bar-value {
+  font-size: 11px;
+  color: var(--text);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* 时间分布 */
+.time-distribution {
+  padding: 8px 0;
+}
+
+.time-item {
+  margin-bottom: 16px;
+}
+
+.time-item:last-child {
+  margin-bottom: 0;
+}
+
+.time-label-row {
+  display: flex;
+  align-items: center;
+  margin-bottom: 6px;
+}
+
+.time-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.time-label {
+  flex: 1;
+  font-size: 14px;
+}
+
+.time-percent {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+}
+
+.time-bar-bg {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.time-bar {
+  height: 100%;
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* 成就徽章 */
+.badges-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.badge-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 12px 8px;
+  background: rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  opacity: 0.4;
+}
+
+.badge-item.unlocked {
+  opacity: 1;
+  background: rgba(255, 193, 7, 0.1);
+}
+
+.badge-icon {
+  font-size: 32px;
+  margin-bottom: 6px;
+}
+
+.badge-name {
+  font-size: 11px;
+  text-align: center;
+  color: var(--text-secondary);
+}
+
+.badge-item.unlocked .badge-name {
+  color: var(--text);
+  font-weight: 500;
+}
+
+/* 连续打卡卡片 */
+.streak-card {
+  text-align: center;
+  padding: 24px;
+  background: linear-gradient(135deg, rgba(255, 117, 76, 0.1) 0%, rgba(255, 150, 76, 0.1) 100%);
+}
+
+.streak-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+
+.streak-icon {
+  font-size: 24px;
+  margin-right: 8px;
+}
+
+.streak-title {
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.streak-num {
+  font-size: 48px;
+  font-weight: bold;
+  color: var(--orange);
+  display: block;
+  margin-bottom: 8px;
+}
+
+.streak-desc {
+  font-size: 13px;
+  color: var(--text-secondary);
+}

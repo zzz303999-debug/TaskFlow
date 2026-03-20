@@ -1,0 +1,50 @@
+<!--pages/index/index.wxml-->
+<view class="container">
+  <!-- 顶部标题 -->
+  <view class="header">
+    <text class="title">今日任务</text>
+    <text class="subtitle">{{today}}</text>
+  </view>
+
+  <!-- 任务列表 -->
+  <view class="task-list">
+    <view wx:if="{{tasks.length === 0}}" class="empty-state">
+      <image class="empty-icon" src="/images/empty.png" mode="aspectFit"></image>
+      <text class="empty-text">今天还没有任务哦～</text>
+    </view>
+
+    <view 
+      wx:for="{{tasks}}" 
+      wx:key="id" 
+      class="task {{item.done ? 'done' : ''}}"
+    >
+      <view class="task-left">
+        <view class="checkbox {{item.done ? 'checked' : ''}}" bindtap="toggleTask" data-id="{{item.id}}">
+          <text wx:if="{{item.done}}" class="check-icon">✓</text>
+        </view>
+        <text class="task-title" bindtap="openDetail" data-title="{{item.title}}" data-id="{{item.id}}">{{item.title}}</text>
+      </view>
+      <text class="task-time" bindtap="openDetail" data-title="{{item.title}}" data-id="{{item.id}}">{{item.time}}</text>
+    </view>
+  </view>
+</view>
+
+<!-- AI 聊天式输入框 -->
+<view class="ai-chat-input">
+  <view class="input-wrapper">
+    <image class="mic" src="/images/mic.png" mode="aspectFit" bindtap="startVoice"></image>
+    <input 
+      class="ai-input" 
+      placeholder="告诉我今天要做什么..." 
+      value="{{inputValue}}"
+      bindinput="onInput"
+      bindconfirm="quickAddTask"
+    />
+    <view class="send-btn" bindtap="quickAddTask">
+      <text class="send-icon">→</text>
+    </view>
+  </view>
+</view>
+
+<!-- Toast -->
+<view class="toast {{toastShow ? 'show' : ''}}">{{toastText}}</view>

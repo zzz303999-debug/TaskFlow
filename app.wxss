@@ -1,0 +1,127 @@
+/* app.wxss - 全局样式 iOS 风格 */
+page {
+  /* iOS 配色系统 */
+  --primary: #007AFF;
+  --primary-light: #5AC8FA;
+  --green: #34C759;
+  --orange: #FF9500;
+  --red: #FF3B30;
+  --bg: #F2F2F7;
+  --card: #FFFFFF;
+  --text: #000000;
+  --text-secondary: #8E8E93;
+  --separator: #C6C6C8;
+  --radius-lg: 20px;
+  --radius-md: 14px;
+  --radius-sm: 10px;
+  
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'PingFang SC', 'SF Pro Text', sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 深色模式 */
+page.dark {
+  --bg: #000000;
+  --card: #1C1C1E;
+  --text: #FFFFFF;
+  --text-secondary: #98989D;
+  --separator: #38383A;
+}
+
+/* iOS 风格卡片 */
+.card {
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  padding: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+}
+
+/* iOS 风格按钮 */
+.btn {
+  background: var(--primary);
+  color: white;
+  padding: 14px 28px;
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-size: 17px;
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.btn:active {
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--primary);
+}
+
+/* 通用容器 */
+.container {
+  padding: 0;
+  padding-bottom: 100px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* iOS 风格头部 */
+.header {
+  padding: 20px 20px 16px;
+  background: var(--bg);
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  display: block;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 6px;
+  font-weight: 400;
+}
+
+/* 分割线 */
+.separator {
+  height: 1px;
+  background: var(--separator);
+  margin: 0 16px;
+}
+
+/* 列表项 */
+.list-item {
+  display: flex;
+  align-items: center;
+  padding: 16px 20px;
+  background: var(--card);
+  border-bottom: 1px solid var(--separator);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+/* 导航栏 */
+.nav-bar {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-weight: 600;
+  background: var(--bg);
+  border-bottom: 1px solid var(--separator);
+}

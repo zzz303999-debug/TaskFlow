@@ -1,0 +1,265 @@
+/* pages/profile/profile.wxss */
+.container {
+  padding: 20px;
+  padding-bottom: 40px;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 用户信息卡片 */
+.user-card {
+  margin-bottom: 16px;
+}
+
+.user-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--primary) 0%, var(--orange) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 16px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.avatar-text {
+  font-size: 28px;
+  font-weight: bold;
+  color: white;
+}
+
+.avatar-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 退出按钮（小） */
+.logout-btn-small {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255, 117, 76, 0.1);
+  color: var(--orange);
+  padding: 6px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+}
+
+.logout-btn-small:active {
+  opacity: 0.7;
+}
+
+/* 登录按钮区域 */
+.login-btn-section {
+  margin-top: 20px;
+  width: 100%;
+  text-align: center;
+}
+
+/* 登录按钮 */
+.login-btn {
+  background: linear-gradient(135deg, #07C160 0%, #06AD56 100%);
+  color: white;
+  border: none;
+  border-radius: 24px;
+  padding: 16px 24px;
+  font-size: 15px;
+  font-weight: 500;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(7, 193, 96, 0.3);
+}
+
+.login-btn:active {
+  opacity: 0.9;
+  transform: scale(0.98);
+}
+
+.wechat-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.login-tip {
+  display: block;
+  margin-top: 12px;
+  font-size: 12px;
+  color: var(--text-secondary);
+}
+
+.user-info {
+  flex: 1;
+}
+
+.user-name {
+  font-size: 20px;
+  font-weight: bold;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.user-level {
+  font-size: 13px;
+  color: var(--primary);
+  background: rgba(37, 99, 235, 0.1);
+  padding: 3px 10px;
+  border-radius: 10px;
+}
+
+/* 经验值 */
+.exp-section {
+  margin-top: 16px;
+}
+
+.exp-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.exp-label {
+  font-size: 13px;
+  color: var(--text-secondary);
+}
+
+.exp-value {
+  font-size: 13px;
+  color: var(--text);
+  font-weight: 500;
+}
+
+.exp-bar-bg {
+  height: 8px;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.exp-bar {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary) 0%, var(--green) 100%);
+  border-radius: 4px;
+  transition: width 0.5s ease;
+}
+
+/* 数据统计行 */
+.stats-row {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px 0;
+  margin-bottom: 16px;
+}
+
+.mini-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.mini-stat-num {
+  font-size: 24px;
+  font-weight: bold;
+  color: var(--primary);
+}
+
+.mini-stat-label {
+  font-size: 12px;
+  color: var(--text-secondary);
+  margin-top: 4px;
+}
+
+/* 菜单区域 */
+.menu-section {
+  margin-bottom: 24px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 14px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-icon {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+}
+
+.menu-label {
+  flex: 1;
+  font-size: 15px;
+}
+
+.menu-label.vip {
+  color: #FFB800;
+  font-weight: 500;
+}
+
+.menu-arrow {
+  font-size: 20px;
+  color: var(--text-secondary);
+}
+
+.menu-switch {
+  transform: scale(0.8);
+}
+
+.menu-badge {
+  font-size: 12px;
+  color: var(--text-secondary);
+  background: rgba(0, 0, 0, 0.05);
+  padding: 3px 8px;
+  border-radius: 6px;
+}
+
+/* 退出登录按钮 */
+.logout-btn {
+  text-align: center;
+  padding: 14px;
+  border-radius: 24px;
+  background: rgba(255, 117, 76, 0.1);
+  color: var(--orange);
+  font-size: 15px;
+}
+
+.logout-btn:active {
+  opacity: 0.7;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 100;
+  font-size: 14px;
+}
+
+.toast.show {
+  opacity: 1;
+}

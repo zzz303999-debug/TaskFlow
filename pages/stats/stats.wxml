@@ -1,0 +1,61 @@
+<!--pages/stats/stats.wxml-->
+<view class="container">
+  <view class="header">
+    <text class="title">效率报告</text>
+    <text class="subtitle">过去 7 天的数据统计</text>
+  </view>
+
+  <!-- 核心数据卡片 -->
+  <view class="stats-overview card">
+    <view class="stat-row">
+      <view class="stat-item-large">
+        <text class="stat-num-large">{{stats.completed}}</text>
+        <text class="stat-label-large">已完成</text>
+      </view>
+      <view class="divider"></view>
+      <view class="stat-item-large">
+        <text class="stat-num-large">{{stats.pending}}</text>
+        <text class="stat-label-large">待完成</text>
+      </view>
+      <view class="divider"></view>
+      <view class="stat-item-large">
+        <text class="stat-num-large">{{stats.rate}}%</text>
+        <text class="stat-label-large">完成率</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 图表卡片 -->
+  <view class="card">
+    <view class="section-title">本周完成任务数</view>
+    <view class="chart-container">
+      <view class="bar-chart">
+        <view class="bar-item" wx:for="{{chartData}}" wx:key="day">
+          <view class="bar-wrapper">
+            <view class="bar" style="height: {{item.height}}%;"></view>
+          </view>
+          <text class="bar-day">{{item.day}}</text>
+          <text class="bar-value">{{item.value}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 时间分布 -->
+  <view class="card">
+    <view class="section-title">时间分配</view>
+    <view class="time-distribution">
+      <view class="time-item" wx:for="{{timeData}}" wx:key="label">
+        <view class="time-label-row">
+          <view class="time-dot" style="background: {{item.color}};"></view>
+          <text class="time-label">{{item.label}}</text>
+          <text class="time-percent">{{item.percent}}%</text>
+        </view>
+        <view class="time-bar-bg">
+          <view class="time-bar" style="width: {{item.percent}}%; background: {{item.color}};"></view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>
+

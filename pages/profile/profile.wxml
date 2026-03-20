@@ -1,0 +1,122 @@
+<!--pages/profile/profile.wxml-->
+<view class="container">
+  <!-- 用户信息卡片 -->
+  <view class="user-card card">
+    <view class="user-header">
+      <!-- 已登录显示真实头像 -->
+      <view class="avatar" wx:if="{{logged}}">
+        <image class="avatar-image" src="{{avatarUrl}}" mode="aspectFill" />
+      </view>
+      <!-- 未登录显示默认头像 -->
+      <view class="avatar" wx:else>
+        <text class="avatar-text">{{userInfo.name[0]}}</text>
+      </view>
+      
+      <view class="user-info">
+        <text class="user-name">{{logged ? nickName : userInfo.name}}</text>
+        <text class="user-level" wx:if="{{logged}}">已登录</text>
+        <text class="user-level" wx:else>未登录</text>
+      </view>
+      
+      <!-- 退出登录按钮（已登录时显示） -->
+      <view wx:if="{{logged}}" class="logout-btn-small" bindtap="logout">
+        <text>退出</text>
+      </view>
+    </view>
+    
+    <!-- 登录按钮（未登录时显示） -->
+    <view wx:if="{{!logged}}" class="login-btn-section">
+      <button class="login-btn" bindtap="goToLogin" hover-class="login-btn-hover">
+        <image class="wechat-icon" src="/images/wechat.png" mode="aspectFit" />
+        <text>立即登录</text>
+      </button>
+      <text class="login-tip">登录后同步数据，享受完整功能</text>
+    </view>
+    
+    <view class="exp-section">
+      <view class="exp-header">
+        <text class="exp-label">经验值</text>
+        <text class="exp-value">{{userInfo.exp}} / {{userInfo.nextLevelExp}}</text>
+      </view>
+      <view class="exp-bar-bg">
+        <view class="exp-bar" style="width: {{expPercent}}%;"></view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 数据统计 -->
+  <view class="stats-row card">
+    <view class="mini-stat">
+      <text class="mini-stat-num">{{stats.totalTasks}}</text>
+      <text class="mini-stat-label">总任务</text>
+    </view>
+    <view class="mini-stat">
+      <text class="mini-stat-num">{{stats.completedTasks}}</text>
+      <text class="mini-stat-label">已完成</text>
+    </view>
+    <view class="mini-stat">
+      <text class="mini-stat-num">{{stats.streakDays}}</text>
+      <text class="mini-stat-label">连续打卡</text>
+    </view>
+  </view>
+
+  <!-- 功能菜单 -->
+  <view class="menu-section">
+    <view class="card">
+      <view class="menu-item" bindtap="toggleDarkMode">
+        <image class="menu-icon" src="/images/icon-dark.png" mode="aspectFit"></image>
+        <text class="menu-label">深色模式</text>
+        <switch class="menu-switch" checked="{{darkMode}}" bindchange="toggleDarkMode" color="#2563EB" />
+      </view>
+      
+      <view class="menu-item" bindtap="goToSettings">
+        <image class="menu-icon" src="/images/icon-settings.png" mode="aspectFit"></image>
+        <text class="menu-label">设置</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      
+      <view class="menu-item" bindtap="goToReminders">
+        <image class="menu-icon" src="/images/icon-reminder.png" mode="aspectFit"></image>
+        <text class="menu-label">提醒设置</text>
+        <text class="menu-arrow">›</text>
+      </view>
+    </view>
+
+    <view class="card">
+      <view class="menu-item" bindtap="goToVIP">
+        <image class="menu-icon" src="/images/icon-vip.png" mode="aspectFit"></image>
+        <text class="menu-label vip">会员中心</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      
+      <view class="menu-item" bindtap="shareApp">
+        <image class="menu-icon" src="/images/icon-share.png" mode="aspectFit"></image>
+        <text class="menu-label">分享好友</text>
+        <text class="menu-arrow">›</text>
+      </view>
+    </view>
+
+    <view class="card">
+      <view class="menu-item" bindtap="giveFeedback">
+        <image class="menu-icon" src="/images/icon-feedback.png" mode="aspectFit"></image>
+        <text class="menu-label">意见反馈</text>
+        <text class="menu-arrow">›</text>
+      </view>
+      
+      <view class="menu-item" bindtap="checkUpdate">
+        <image class="menu-icon" src="/images/icon-update.png" mode="aspectFit"></image>
+        <text class="menu-label">检查更新</text>
+        <text class="menu-badge">v1.0.0</text>
+      </view>
+      
+      <view class="menu-item" bindtap="aboutApp">
+        <image class="menu-icon" src="/images/icon-about.png" mode="aspectFit"></image>
+        <text class="menu-label">关于 TaskFlow</text>
+        <text class="menu-arrow">›</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- Toast -->
+<view class="toast {{toastShow ? 'show' : ''}}">{{toastText}}</view>

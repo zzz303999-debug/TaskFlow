@@ -1,0 +1,263 @@
+/* pages/detail/detail.wxss */
+.container {
+  padding: 20px 24px;
+  padding-bottom: 100px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.header {
+  margin-bottom: 24px;
+}
+
+.title {
+  font-size: 26px;
+  font-weight: bold;
+  display: block;
+  line-height: 1.4;
+}
+
+/* 状态卡片 */
+.status-card {
+  margin-bottom: 16px;
+}
+
+.status-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.status-label {
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.status-value {
+  font-size: 15px;
+  font-weight: 500;
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.status-value.pending {
+  background: rgba(255, 117, 76, 0.15);
+  color: var(--orange);
+}
+
+.status-value.done {
+  background: rgba(63, 209, 165, 0.15);
+  color: var(--green);
+}
+
+/* 滑动开关 */
+.status-toggle {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.toggle-wrapper {
+  width: 51px;
+  height: 31px;
+}
+
+.toggle-track {
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.1);
+  border-radius: 15.5px;
+  position: relative;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-track.active {
+  background: var(--green);
+}
+
+.toggle-thumb {
+  width: 27px;
+  height: 27px;
+  background: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: transform 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.toggle-thumb.active {
+  transform: translateX(20px);
+}
+
+.status-text {
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.status-text.pending {
+  color: var(--orange);
+}
+
+.status-text.done {
+  color: var(--green);
+}
+
+/* 信息列表 */
+.info-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.info-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.info-item:first-child {
+  padding-top: 0;
+}
+
+.info-label {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  color: var(--text-secondary);
+}
+
+.info-label .icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
+}
+
+.info-value {
+  font-size: 15px;
+  color: var(--text);
+}
+
+.info-value.high {
+  color: var(--orange);
+  font-weight: 500;
+}
+
+.info-value.note {
+  text-align: right;
+  max-width: 60%;
+}
+
+/* 标签 */
+.tags {
+  display: flex;
+  gap: 8px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  background: rgba(37, 99, 235, 0.1);
+  color: var(--primary);
+  border-radius: 8px;
+}
+
+/* 章节标题 */
+.section-title {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+/* 子任务 */
+.subtask {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+}
+
+.subtask-checkbox {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 2px solid var(--primary);
+  margin-right: 12px;
+  flex-shrink: 0;
+}
+
+.subtask-checkbox.checked {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.subtask-title {
+  font-size: 14px;
+  color: var(--text);
+}
+
+.subtask-title.done {
+  text-decoration: line-through;
+  opacity: 0.5;
+}
+
+.add-subtask {
+  display: flex;
+  align-items: center;
+  padding: 10px 0;
+  color: var(--text-secondary);
+  font-size: 14px;
+}
+
+.add-icon {
+  width: 18px;
+  height: 18px;
+  border: 2px dashed var(--text-secondary);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 12px;
+  font-size: 12px;
+}
+
+/* 操作按钮 */
+.action-buttons {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.complete-btn {
+  flex: 1;
+  background: var(--green);
+}
+
+.delete-btn {
+  background: rgba(255, 117, 76, 0.15);
+  color: var(--orange);
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--primary);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 100;
+  font-size: 14px;
+}
+
+.toast.show {
+  opacity: 1;
+}

@@ -1,0 +1,288 @@
+/* pages/index/index.wxss - iOS 风格 */
+.container {
+  padding: 0;
+  padding-bottom: 120px;
+  min-height: 100vh;
+  box-sizing: border-box;
+  background: var(--bg);
+}
+
+/* iOS 风格头部 */
+.header {
+  padding: 12px 24px 8px;
+  background: var(--bg);
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.title {
+  font-size: 34px;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  display: block;
+  color: var(--text);
+}
+
+.subtitle {
+  font-size: 15px;
+  color: var(--text-secondary);
+  display: block;
+  margin-top: 4px;
+}
+
+/* 日期标签 */
+.date-badge {
+  display: inline-block;
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+/* 任务列表容器 */
+.task-list {
+  padding: 0 16px;
+}
+
+/* iOS 风格任务卡片 */
+.task {
+  display: flex;
+  align-items: center;
+  padding: 20px 24px;
+  background: var(--card);
+  border-radius: var(--radius-lg);
+  margin: 0 16px 12px 16px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+  transition: all 0.2s ease;
+}
+
+.task:active {
+  transform: scale(0.98);
+}
+
+.task.done {
+  opacity: 0.6;
+}
+
+.task.done .task-title {
+  text-decoration: line-through;
+  color: var(--text-secondary);
+}
+
+.task-left {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+/* iOS 风格复选框 */
+.checkbox {
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  border: 2px solid var(--separator);
+  margin-right: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.checkbox.checked {
+  background: var(--green);
+  border-color: var(--green);
+}
+
+.check-icon {
+  font-size: 14px;
+  color: white;
+  font-weight: 700;
+}
+
+.task-title {
+  font-size: 17px;
+  color: var(--text);
+  font-weight: 400;
+  flex: 1;
+}
+
+.task-time {
+  font-size: 13px;
+  color: var(--text-secondary);
+  margin-left: 12px;
+  font-weight: 500;
+}
+
+/* 优先级标签 */
+.priority-tag {
+  font-size: 12px;
+  padding: 4px 10px;
+  border-radius: 8px;
+  font-weight: 600;
+  margin-left: 10px;
+}
+
+.priority-high {
+  background: rgba(255, 59, 48, 0.1);
+  color: var(--red);
+}
+
+.priority-medium {
+  background: rgba(255, 149, 0, 0.1);
+  color: var(--orange);
+}
+
+.priority-low {
+  background: rgba(52, 199, 89, 0.1);
+  color: var(--green);
+}
+
+/* 空状态 */
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 80px 24px;
+}
+
+.empty-icon {
+  width: 80px;
+  height: 80px;
+  margin-bottom: 16px;
+  opacity: 0.5;
+}
+
+.empty-text {
+  font-size: 17px;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+.empty-hint {
+  font-size: 14px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  opacity: 0.7;
+}
+
+/* iOS 风格输入框 */
+.ai-chat-input {
+  position: fixed;
+  bottom: 30px;
+  left: 20px;
+  right: 20px;
+  z-index: 15;
+}
+
+.input-wrapper {
+  display: flex;
+  align-items: center;
+  background: var(--card);
+  border-radius: 999px;
+  padding: 10px 10px 10px 24px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.mic {
+  width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  cursor: pointer;
+  transition: opacity 0.2s;
+}
+
+.mic:active {
+  opacity: 0.6;
+}
+
+.ai-input {
+  flex: 1;
+  border: none;
+  background: transparent;
+  font-size: 17px;
+  color: var(--text);
+  outline: none;
+  padding: 10px 0;
+}
+
+.ai-input::placeholder {
+  color: var(--text-secondary);
+}
+
+.send-btn {
+  width: 40px;
+  height: 40px;
+  background: var(--primary);
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+  flex-shrink: 0;
+  transition: all 0.2s ease;
+}
+
+.send-btn:active {
+  transform: scale(0.9);
+}
+
+.send-icon {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* iOS 风格 Toast */
+.toast {
+  position: fixed;
+  bottom: 200px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(60, 60, 60, 0.9);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 999px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  z-index: 100;
+  font-size: 15px;
+  font-weight: 500;
+  backdrop-filter: blur(10px);
+}
+
+.toast.show {
+  opacity: 1;
+}
+
+/* 动画 */
+@keyframes slideUp {
+  0% { transform: translateY(20px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes pop {
+  0% { transform: scale(0.9); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.task {
+  animation: slideUp 0.3s ease;
+}
+
+.task.done .checkbox {
+  animation: pop 0.3s ease;
+}
+
+/* 分组标题 */
+.section-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  padding: 20px 20px 10px;
+}
